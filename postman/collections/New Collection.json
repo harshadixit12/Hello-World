@@ -8,6 +8,20 @@
 	"item": [
 		{
 			"name": "echo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aec40c5f-fbb8-4a80-8ed0-1bcfce075f0c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "f67ed26b-25cf-4d12-b777-20476a90bb17",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
