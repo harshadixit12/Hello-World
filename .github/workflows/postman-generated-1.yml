@@ -22,6 +22,7 @@ jobs:
           GITHUB_WORKSPACE: ${{ github.workspace }}
           GITHUB_RUN_ID: ${{ github.run_id }}
         run: |
-          postman collection run "${GITHUB_WORKSPACE}/postman/collections/New Collection.json" -e "22912480-8b6a2e58-45e3-4402-a912-7deea93062f3" --verbose
+          postman collection run "${GITHUB_WORKSPACE}/postman/collections/New Collection.json"-e "22912480-8b6a2e58-45e3-4402-a912-7deea93062f3" --integration-id "122615-${GITHUB_RUN_ID}"
+          postman collection run "${GITHUB_WORKSPACE}/postman/collections/separate #3.json"-e "22912480-8b6a2e58-45e3-4402-a912-7deea93062f3" --integration-id "122615-${GITHUB_RUN_ID}"
           # Run your API using Postman CLI
-          postman api lint
+          postman api lint --integration-id 122615
